@@ -1,0 +1,30 @@
+{
+  "name": "roadtrip.europe",
+  "version": "1.0.0",
+  "description": "A website to connect with other people who feel like traveling with you to other places. Like remote beaches and Lagunes!",
+  "main": "Roadtrip.Europe.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "not yet"
+  },
+  "keywords": [
+    "travelling",
+    "friends",
+    "fun",
+    "sun",
+    "happyness",
+    "liberty",
+    "hippies",
+    "colors",
+    "art",
+    "nowork"
+  ],
+  "author": "Nickel Paulsen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
