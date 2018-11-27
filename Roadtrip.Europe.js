@@ -3,25 +3,26 @@ var express = require('express'),
     // we will need both the express-framework and the app
     // so we put them in different variables.
     app = express();
+// we now want to set up our view engine. We choose handlebars!
 
 /* define where out website will run locally.
  * the process.env is an object created by nodejs to mirror the enviroment
  * i.e. the computer or server, where it is beeing executed. 
- *
- * TECHNICAL: The 'port' property is an accessor-property of the express-app object.
- * That is why we use app.set('port',...) to access that property! See David Flanagan
- * for reference on accessor-properties!
  */
 app.set('port', process.env.PORT || 3000);
 
+/* the following is called a view engine! It gives us the possibility to template our html files,
+ * i.e. we can but each single page of our site into the same main.hbs file. This allows us to write
+ * out code only at ONE place! And not to write it in different places!
+ */
+app.set('view engine', 'hbs');
 
 /*=================================ROUTES==================================
  * we set our routing, i.e the paths where the browser will find the pages
  * of the website. */
 app.get('/', function(req, res) {
-    res.type('text/plain');
     res.status(404);
-    res.send('coming home');
+    res.render('home');
 });
 
 
@@ -33,13 +34,14 @@ app.get('/', function(req, res) {
 //This function will be used when the page typed into the browser was not found! 
 app.use(function(req, res, next) {
     res.status(404);
-    res.send('404');
+    res.render('404');
 });
 
+//This function will be used when there was an Javascript-Error on the server!
 app.use(function(err, req, res, next) {
     console.error(err.stack);
     res.status(500);
-    res.send('500');
+    res.render('500');
 });
 
 /*=================================SERVER==================================
@@ -48,10 +50,6 @@ app.use(function(err, req, res, next) {
 /*This method of the express app defines what PORT the server will be listening to*/
 app.listen(
     /* FIRST ARGUMENT: Defines what port the server is listening to in the browser
-     *
-     * TECHNICAL: since 'port' is an accessor property of the 
-     * express-object,we can retrieve it with the getter-method 
-     * .get()!
      */
     app.get('port'),
     /* SECOND ARGUMENT: Defines what call-back to call when the server has been
