@@ -1,28 +1,7 @@
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-a.currency {
-    text-decoration: none;
+body {
+    margin: 0;
 }
-.currency.selected {
-    font-weight: bold;
-    font-size: 150%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -49,9 +49,6 @@ app.use(express.static(__dirname + '/public'));
 /*=================================ROUTES==================================
  * we set our routing, i.e the paths where the browser will find the pages
  * of the website. */
-app.get('/start', function(req, res) {
-    res.render('start');
-});
 app.get('/', function(req, res) {
     res.render('home');
 });

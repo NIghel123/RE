@@ -1,0 +1,93 @@
+<!-- the following will be included into the head of the main.hbs file! -->
+{{#section 'head'}}
+<style>
+body {
+    font-size: 1.7rem;
+    font-family:futura-pt;
+}
+#background{
+    width:100%;
+}
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+.sidebar-height {
+    position: relative;
+    top: 0;
+    overflow-x: hidden;
+}
+.sidebar .nav-link {
+    font-weight: 600;
+    color: #333;
+}
+#nav{
+    display:none;
+    /*width:19%;*/
+    background: rgba(255, 255, 255, 0.5);
+}
+p{
+    transform: scale(1, 1.2);
+    -webkit-transform: scale(1, 1.2); /* Safari and Chrome */
+    -moz-transform: scale(1, 1.2); /* Firefox */
+    -ms-transform: scale(1, 1.2); /* IE 9+ */
+    -o-transform: scale(1, 1.2); /* Opera */
+}
+#nav{
+    min-width:275px;
+}
+</style>
+{{/section}}
+
+<!-- the following will replace the {{{body}}} tag inside the main.hbs file -->
+<img id='background' src="img/BilderKlaus0009.JPG">
+<div class="container-fluid">
+    <div class="row">
+        <nav class="sidebar col-lg-4" id="nav">
+            <div  class="sidebar-height">
+                <ul class="nav flex-column">
+                    <a href="viewRoadtrips" class="nav-link">
+                        <li class="nav-item py-5 mx-auto" >
+                            <p>Mitfahrer für<br>Roadtrips gesucht</p>
+                        </li>
+                    </a>
+                    <a class="nav-link" href='createRoadtrip'>
+                        <li class="nav-item py-5 mx-auto">
+                            <p>Mache deinen Traumroadtrip</p>
+                        </li>
+                    </a>
+                    <a class="nav-link" href='whatSiteIsThis'>
+                        <li class="nav-item py-5 mx-auto">
+                            <p>Was ist das für eine Seite?</p>
+                        </li>
+                    </a>
+                    <a class="nav-link" href='login'>
+                        <li class="nav-item pb-2 pt-5 mx-auto">
+                            <p>Einloggen</p>
+                        </li>
+                    </a>
+                    <a class="nav-link" href='login'>
+                        <li class="nav-item py-2 mx-auto">
+                            <p>Registrieren</p>
+                        </li>
+                    </a>
+                    <a class="nav-link" href='login'>
+                        <li class="nav-item pt-5 pb-3 mx-auto">
+                            <p>Impressum</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+{{#section 'jQuery'}}
+<script>
+    $(function(){setTimeout(function(){
+        $("#nav").fadeIn(1900);
+    },1000);});
+</script>
+{{/section}}

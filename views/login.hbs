@@ -1,0 +1,35 @@
+<!-- the following will be included into the head of the main.hbs file! -->
+{{#section 'head'}}
+    <style>
+        #box{
+border:solid 1px black;
+    width:30%;
+    margin:0 auto;
+    position:relative;
+    top:200px;
+}
+img{
+    width:80%;
+    display:block;
+    margin:0 auto;
+}
+#inputWrap{
+    display:block;
+    margin:0 auto;
+    width:80%;
+}
+input{
+    width:100%;
+}
+
+    </style>
+{{/section}}
+
+<!-- the following will replace the {{{body}}} tag inside the main.hbs file -->
+<div id='box'>
+    <img id='titleImg' src="img/IMG_9846.jpg">
+    <div id='inputWrap'>
+        <input type='text' required minlength="2" maxlength="30">
+    </div>
+    <img id='contiue' src='img/IMG_9846.jpg'>
+</div>
