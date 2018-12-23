@@ -22,6 +22,9 @@ handlebars = handlebars.create({
     defaultLayout: 'main',
     extname: '.hbs',
     helpers: {
+        /* the function 'section' is obviously invoked inside the views e.g. in home.hbs with 
+         * {{#section 'sidebar'}} . I.e. it is passed the argument 'sidebar' which is below referred to
+         * as 'name'*/
         section: function(name, options) {
             //most of the time this._sections is undefined!
             if (!this._sections) this._sections = {};
@@ -29,6 +32,8 @@ handlebars = handlebars.create({
             //{{/section}} placeholders inside the layout file! 
             //The property '_sections.name' will be the one rendered inside the 
             //{{{_sections.name}}} placeholder in the main.hbs!
+            /* Now I know what options.fn(this) does! It fills in the context (=this) into the 
+             * markup between the {{section 'name'}} ... markup ... {{/section}} tags! */
             this._sections[name] = options.fn(this);
             return null;
         }
@@ -50,14 +55,23 @@ app.use(express.static(__dirname + '/public'));
  * we set our routing, i.e the paths where the browser will find the pages
  * of the website. */
 app.get('/start', function(req, res) {
-    res.render('start');
+    res.render('start',
+        /* what we are doing now is switching of the sidebar in the layout file via the {{#if fullscreen}}
+         * handlebar tags in the main.hbs file!
+         */
+        {
+            fullscreen: true //also the value false would switch this mode on due to the behaviour of the #if
+        }
+    );
 });
 app.get('/', function(req, res) {
     res.render('home');
 });
 
 app.get('/login', function(req, res) {
-    res.render('login');
+    res.render('login', {
+        fullscreen: true
+    });
 });
 
 app.get('/createRoadtrip', function(req, res) {
