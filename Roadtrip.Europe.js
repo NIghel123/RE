@@ -65,7 +65,35 @@ app.get('/start', function(req, res) {
     );
 });
 app.get('/', function(req, res) {
-    res.render('home');
+    res.render('home',
+        /*the content of the buttons of the sidebar (from top to bottom)*/
+        {
+            /*MAYBE IT IS A GOOD IDEA TO EXPORT THIS KIND OF 'PRIMARY CONTENT' INTO SOME GENERAL FILE!
+             * THAT CAN ALSO SWITCH BETWEEN LANGUAGES! SUCH THAT IT IS EASY TO PROVIDE THE RIGHT
+             * LANGUAGE NEEDED!!! {home:
+             * {de:[{button1:'Mache deinen ...',link1:'/createRoadtrip'},{button2:'...,...},...],
+             * en:[{button1:'Make your own Roadtrip',link...
+             * Or maybe structure it seperately for text and links. Because the links will be the
+             * same anyway in every language! Or could I even change that? Well I think so!*/
+            context: [{
+                    text: 'Mache deinen<br>Traumroadtrip',
+                    link: '/createRoadtrip'
+                },
+                {
+                    text: 'Mitfahrer für<br>Roadtrips gesucht',
+                    link: '/viewRoadtrips'
+                },
+                {
+                    text: 'Was ist das<br>für eine Seite?',
+                    link: '/whatSiteIsThis'
+                },
+                {
+                    text: 'Einloggen',
+                    link: '/login'
+                },
+            ]
+        }
+    );
 });
 
 app.get('/login', function(req, res) {

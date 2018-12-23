@@ -7,10 +7,6 @@
     --h:max(var(--font-size),var(--line-height));
     --p:calc( 100vh / 7 - var(--h) );
 }
-    .sidebar{
-        /*padding-top:var(--p);*/
-        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    }
     .button.big{
         margin: var(--p) 0 var(--p) 1.5rem; /*top right bottom left*/
         line-height:2rem;
@@ -27,12 +23,6 @@
         text-decoration:none;
         /*color: #333;*/
     }
-    .container-fluid{
-        padding:0;
-    }
-    .row .no-gutters{
-        background-color:#d32e1d;
-    }
     p{
         transform: scale(1, 1.2);
         -webkit-transform: scale(1, 1.2); /* Safari and Chrome */
@@ -42,24 +32,25 @@
     }
     body {
         font-size: 1.5rem;
-        font-family:futura-pt;
     }
-
 </style>
 {{/section}}
 
-{{#section 'sidebar'}}
-<a href="#"><div class="button big"><p>Mache deinen<br>Traumroadtrip</p></div></a>
-<div class="w-100"> </div>
-<a href="#"><div class="button big"><p>Mitfahrer für<br>Roadtrips gesucht</p></div></a>
-<div class="w-100"></div>
-<a href="#"><div class="button big"><p>Was ist das<br>für eine Seite?</p></div></a>
-<div class="w-100"></div>
-<a href="#"><div class="button smaller"><p>Einloggen</p></div></a>
-{{/section}}
-
-<!-- the following will replace the {{{body}}} tag inside the main.hbs file -->
+<!--The following will be the main part of the document! It will be the {{{body}}} part in the main.hbs file -->
 <img class="w-100" src="img/BilderKlaus0009.JPG">
+<!--MAYBE IT IS A GOOD IDEA TO HAVE TWO DIFFERENT LAYOUTS! MAYBE I CAN INTEGRATE ONE INTO THE OTHER SOMEHOW?-->
+
+{{#section 'sidebar'}}
+{{#each context}}
+{{#unless @last}}
+<a href="{{link}}"><div class="button big">
+        <p> {{{text}}} {{!this referrs to the context we are in . In this case the array elements}}</p></div></a>
+<div class="w-100"></div>
+{{else}}
+<a href="{{link}}"><div class="button smaller"><p> {{{text}}} {{!this referrs to the context we are in . In this case the array elements}}</p></div></a>
+{{/unless}}
+{{/each}}
+{{/section}}
 
 <!-- the following will be included into the jQuery section at the bottom of the main.hbs file! -->
 {{#section 'jQuery'}}
