@@ -1,6 +1,10 @@
-$font-family-base: futura-pt, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base: Futura, Trebuchet MS, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
 $grid-columns:                21 !default;
+
+/*color system*/
+$red:                    #d32e1d !default;
+
 
 //all of bootstrap:
 @import "../../../../node_modules/bootstrap/scss/bootstrap";

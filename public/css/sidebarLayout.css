@@ -1,11 +1,11 @@
-
-.container-fluid{
+/* sidebar styling */
+#content{
     padding:0;
 }
-.row .no-gutters{
-    background-color:#d32e1d;
-}
-.sidebar{
-    /*padding-top:var(--p);*/
+#sidebar{
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background-color:var(--red,#d32e1d);
+}
+#sidebar > *{
+    padding-left:2.0625em;
 }

@@ -1,55 +1,42 @@
 <!-- the following will be included into the head of the main.hbs file! -->
 {{#section 'head'}}
 <style>
-:root{
-    --font-size:1.5rem;
-    --line-height:2rem;
-    --h:max(var(--font-size),var(--line-height));
-    --p:calc( 100vh / 7 - var(--h) );
+h4{
+    font-weight:normal;
 }
-    .button.big{
-        margin: var(--p) 0 var(--p) 1.5rem; /*top right bottom left*/
-        line-height:2rem;
-    }
-    .button.smaller{
-        margin: calc( var(--p) / 2 ) 0 calc( var(--p) / 2 ) 1.5rem;
-        line-height:2rem;
-    }
-    a,a:hover{
-        display:block;
-        /*margin:0 auto;*/
-        font-weight: 600;
-        color: white;
-        text-decoration:none;
-        /*color: #333;*/
-    }
-    p{
-        transform: scale(1, 1.2);
-        -webkit-transform: scale(1, 1.2); /* Safari and Chrome */
-        -moz-transform: scale(1, 1.2); /* Firefox */
-        -ms-transform: scale(1, 1.2); /* IE 9+ */
-        -o-transform: scale(1, 1.2); /* Opera */
-    }
-    body {
-        font-size: 1.5rem;
-    }
+img{
+    height:calc(100vh + .1em);
+    object-fit: cover;
+}
+                @media(min-height:300px){
+                    #sidebar{
+                        height:calc(100vh + .1em);
+                    }
+                    h4{
+                        font-size:2em;
+                    }
+                }
 </style>
 {{/section}}
 
 <!--The following will be the main part of the document! It will be the {{{body}}} part in the main.hbs file -->
 <img class="w-100" src="img/BilderKlaus0009.JPG">
-<!--MAYBE IT IS A GOOD IDEA TO HAVE TWO DIFFERENT LAYOUTS! MAYBE I CAN INTEGRATE ONE INTO THE OTHER SOMEHOW?-->
 
 {{#section 'sidebar'}}
-{{#each context}}
-{{#unless @last}}
-<a href="{{link}}"><div class="button big">
-        <p> {{{text}}} {{!this referrs to the context we are in . In this case the array elements}}</p></div></a>
-<div class="w-100"></div>
-{{else}}
-<a href="{{link}}"><div class="button smaller"><p> {{{text}}} {{!this referrs to the context we are in . In this case the array elements}}</p></div></a>
-{{/unless}}
-{{/each}}
+<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-21 order-first order-sm-last">
+    <div id="sidebar" class="row no-gutters sidebar" >
+        <div class="w-100"></div>
+        {{#each context}}
+        {{#unless @last}}
+        <a href="{{link}}">
+            <h4>{{{text}}}</h4></a>
+        <div class="w-100"></div>
+        {{else}}
+        <a href="{{link}}"><h4>{{{text}}}</h4></a>
+        {{/unless}}
+        {{/each}}
+    </div>
+</div>
 {{/section}}
 
 <!-- the following will be included into the jQuery section at the bottom of the main.hbs file! -->
