@@ -1,42 +1,24 @@
 <!-- the following will be included into the head of the main.hbs file! -->
 {{#section 'head'}}
 <style>
-h4{
-    font-weight:normal;
-}
-img{
-    height:calc(100vh + .1em);
-    object-fit: cover;
-}
-                @media(min-height:300px){
-                    #sidebar{
-                        height:calc(100vh + .1em);
-                    }
-                    h4{
-                        font-size:2em;
-                    }
-                }
 </style>
 {{/section}}
 
 <!--The following will be the main part of the document! It will be the {{{body}}} part in the main.hbs file -->
-<img class="w-100" src="img/BilderKlaus0009.JPG">
+<img class="w-100 " src="img/BilderKlaus0009.JPG">
 
 {{#section 'sidebar'}}
-<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-21 order-first order-sm-last">
-    <div id="sidebar" class="row no-gutters sidebar" >
-        <div class="w-100"></div>
-        {{#each context}}
-        {{#unless @last}}
-        <a href="{{link}}">
-            <h4>{{{text}}}</h4></a>
-        <div class="w-100"></div>
-        {{else}}
-        <a href="{{link}}"><h4>{{{text}}}</h4></a>
-        {{/unless}}
-        {{/each}}
-    </div>
+{{#each context}}
+<div class="col"> <!--with this I am creating a new line! -->
+    <a href="{{link}}">
+        <div class="row y-center">
+            <div class="col align-self-center">
+                <h2 class="mx-auto">{{{text}}}</h2>
+            </div>
+        </div>
+    </a>
 </div>
+{{/each}}
 {{/section}}
 
 <!-- the following will be included into the jQuery section at the bottom of the main.hbs file! -->

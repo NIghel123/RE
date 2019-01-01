@@ -33,12 +33,16 @@
         {{{body}}}
         {{else}}
         <!--When we are not in fullscreen we only render the contents of the left and right side of the grid:-->
-        <div id="content" class="container-fluid">
-            <div class="row no-gutters">
-                <div id="body-Container" class="col-sm">
-                    {{{body}}}
+        <div class="row no-gutters">
+            <div class="col" id="body-container">
+                {{{body}}}
+            </div>
+            <div class="col-21 col-sm-auto order-first order-sm-last">
+                <div class="container-fluid">
+                    <div class="row" id="sidebar">
+                        {{{_sections.sidebar}}}
+                    </div>
                 </div>
-                {{{_sections.sidebar}}}
             </div>
         </div>
         {{/if}}
