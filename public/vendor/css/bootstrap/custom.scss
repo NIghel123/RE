@@ -1,22 +1,53 @@
 $font-family-base: Futura, Trebuchet MS, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
-$grid-columns:                21 !default;
+$grid-gutter-width: 69px !default;
 
 /*color system*/
-$red:                    #d32e1d !default;
-
+$gray-100: #f8f9faff;
+$red:                    #d32e1d;
+$input-bg:               transparent;
+$input-placeholder-color:#ffffff80 !important;
+$input-color:            white;
 
 //all of bootstrap:
 @import "../../../../node_modules/bootstrap/scss/bootstrap";
 
 // Required
-@import "../../../../node_modules/bootstrap/scss/functions";
-@import "../../../../node_modules/bootstrap/scss/variables";
-@import "../../../../node_modules/bootstrap/scss/mixins";
+//@import "../../../../node_modules/bootstrap/scss/functions";
+//@import "../../../../node_modules/bootstrap/scss/variables";
+//@import "../../../../node_modules/bootstrap/scss/mixins";
 
-// Option../../../al
-@import "../../../../node_modules/bootstrap/scss/reboot";
-@import "../../../../node_modules/bootstrap/scss/type";
-@import "../../../../node_modules/bootstrap/scss/images";
-@import "../../../../node_modules/bootstrap/scss/code";
-@import "../../../../node_modules/bootstrap/scss/grid";
+//@import "../../../../public/css/createRoadtrip";
+//@function theme-color($key : "light") {
+//    @return map-get($theme-colors,$key);
+//}
+//$value : theme-color(); // returns the value of the default $key
+//.btn-light {
+//    //we now call the @mixin called button-variant with the specified arguments;
+//    @include button-variant($value, $value, #66001d, //target background-color;
+//    #66001d,//darken($value,10%), hover-border;
+//    darken($value,10%),
+//    darken($value,12.5%));
+//    color:#934930; //modify the text-color
+//
+//    &:hover{
+//        //        color:#fff;
+//    }
+//}
+
+//I think I can improve what I am doing here by wrting a new color and therefore a new button class that
+//will represent my desired button behaviour. ##TODO
+$darken : darken($red,10%);
+$less-darken :lighten($red,15%);
+html{
+    --button-hover-color : #{$darken};
+    --border-hover-color: #{$less-darken};
+}
+
+
+//// Optional
+//@import "../../../../node_modules/bootstrap/scss/reboot";
+//@import "../../../../node_modules/bootstrap/scss/type";
+//@import "../../../../node_modules/bootstrap/scss/images";
+//@import "../../../../node_modules/bootstrap/scss/code";
+//@import "../../../../node_modules/bootstrap/scss/grid";

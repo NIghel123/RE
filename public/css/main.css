@@ -1,6 +1,11 @@
 /* ==========================================================================
 Author's custom styles
 ========================================================================== */
+html{
+    font-size:.92em;
+    --small-Sidebar:272px;/*eventuell noch in em umwandeln*/
+    --large-Sidebar:350px;
+}
 a,a:hover{
     color: white;
     text-decoration:none;

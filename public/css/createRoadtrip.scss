@@ -1,0 +1,28 @@
+//at the moment this is not needed but maybe I will use it later again!
+#sidebar{
+    overflow: scroll;
+    color:white;
+}
+textarea::placeholder{
+}
+@media(min-width:576px){ /*screens that have at minimum this size*/
+    #sidebar{
+        width:var(--large-Sidebar,350px);
+    }
+}
+
+$key : "light";
+$value : map_get($theme-colors,$key); // returns the value of the $key
+.btn-light {
+    //we now call the @mixin called button-variant with the specified arguments;
+    @include button-variant($value, $value,#f8f9fa44, //background-color;
+    darken($value,10%), //hover-border;
+    darken($value,10%),
+    darken($value,12.5%));
+    color:#934930; //modify the text-color
+
+    &:hover{
+        //        color:#fff;
+    }
+}
+

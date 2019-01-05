@@ -1,11 +1,11 @@
 /* sidebar styling */
 #sidebar{
-    height:100vh;
     flex-direction: column;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     background-color:var(--red,#d32e1d);
+    height:100vh;
 }
-img{
+img:not(.img-thumbnail){
     height:100vh;
     min-width:2px;
     object-fit: cover;
@@ -14,7 +14,4 @@ img{
  * this class should only be applied to containers that also have the class .col-... of bootstrap*/
 .y-center{
     height:100%;
-}
-h2{
-    width:300px;
 }

@@ -1,11 +1,98 @@
 {{#section 'head'}}
+<link href="vendor/css/jquery-ui/jquery-ui.css" rel="stylesheet">
 <style>
+#selectmenu-button{
+    width:100%;
+}
+#sidebar{
+    overflow: scroll;
+    color:white;
+}
+    #upload-picture{
+        color:#934930;
+    }
+    #saveRoadtrip,#upload-picture{
+        transition: background-color .15s ease-in-out, border-color .15s ease-in-out, color .15s ease-in-out;
+    }
+    #saveRoadtrip:hover,#upload-picture:hover{
+        background-color:var(--button-hover-color);
+        border-color:var(--border-hover-color) !important;
+        color:white;
+    }
+    textarea::placeholder{
+    }
+    @media(min-width:576px){ /*screens that have at minimum this size*/
+        #sidebar{
+            width:var(--large-Sidebar,350px);
+        }
+    }
 </style>
 {{/section}}
 
 
-<img src="img/Bild.png">
+<img class="w-100" src="img/Bild.png">
 
 {{#section 'sidebar'}}
-<h1>A Form for entering the Roadtrip Details</h1>
+<div class="align-self-center col">
+    <h3 class="mx-auto text-center my-4">Mache deinen eignen<br>Roadtrip</h3>
+    <form>
+        <div class="form-group">
+            <label for="textarea">Beschreibe hier Deinen Traum-RoadTrip:</label>
+            <textarea class="form-control is-invalid p-0"
+                      rows="11"
+                      id="textarea" placeholder="Erlebe das leben in all seinen Farben.Freiheit und Einheit sei auch mit dabei! Lorem ipsilum Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren. *Brigitte*................" required></textarea>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <img src="svg/dummy.svg" class="img-thumbnail mx-auto mb-3 w-75 h-25 d-block" style="" alt="">
+                <button id="upload-picture" type="button" class="btn btn-light d-block mx-auto w-75">Bild hochladen</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col">
+                    <input type="number" min="1" max="31" class="form-control" placeholder="Tag">
+                </div>
+                <div class="col">
+                    <select class="" id="selectmenu">
+                        <option selected>Monat</option>
+                        <option>Januar</option>
+                        <option>Februar</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>Juni</option>
+                        <option>Juli</option>
+                        <option>August</option>
+                        <option>Semptember</option>
+                        <option>Novemver</option>
+                        <option>Dezember</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" min="1800" max="3000" class="form-control" placeholder="Jahr">
+                </div>
+            </div>
+            <label class="mt-1" for="">Abfahrtsdatum</label>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Reisedauer">
+            <small class="form-text">Beschreibe in einem kurzen Text wie lange du unterwegs sein willst</small>
+        </div>
+    </form>
+
+    <div id="saveRoadtrip" class="border-top border-bottom row">
+        <a href="#">
+            <div class="col align-self-center">
+                <h3 class="mx-auto text-center my-5">Roadtrip Speichern</h3>
+            </div>
+        </a>
+    </div>
+</div>
+{{/section}}
+{{#section 'jQuery'}}
+<script src="vendor/js/jquery-ui.js"></script>
+<script>
+    $( "#selectmenu" ).selectmenu({width:false});
+</script>
 {{/section}}

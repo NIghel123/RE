@@ -1,6 +1,18 @@
 <!-- the following will be included into the head of the main.hbs file! -->
 {{#section 'head'}}
 <style>
+#sidebar{
+    width:var(--small-Sidebar,272px);
+}
+h2{
+    font-stretch:condensed;
+    letter-spacing:1px;
+    line-height:1.3;
+}
+div.row.y-center{
+    border-width:0 0 .5px 0;
+    border-style:solid;
+}
 </style>
 {{/section}}
 
@@ -9,7 +21,7 @@
 
 {{#section 'sidebar'}}
 {{#each context}}
-<div class="col"> <!--with this I am creating a new line! -->
+<div class="col hover-grow"> <!--with this I am creating a new line! -->
     <a href="{{link}}">
         <div class="row y-center">
             <div class="col align-self-center">
@@ -24,5 +36,12 @@
 <!-- the following will be included into the jQuery section at the bottom of the main.hbs file! -->
 {{#section 'jQuery'}}
 <script>
+    // doesnt really work. I have to figuere out how to only make one elemt greater!
+    // var f = function(value){
+    //     return function(){
+    //         $(this).animate({"margin-left": "+=.5in"});
+    //     }
+    // }
+    // $(".hover-grow").hover(f(0),f(0));
 </script>
 {{/section}}

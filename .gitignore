@@ -8,3 +8,6 @@ credentials.js
 *.JPG
 *.svg
 *.mp4
+*.swo
+*.map
+*.swn
