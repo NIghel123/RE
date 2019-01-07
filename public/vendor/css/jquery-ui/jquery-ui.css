@@ -1,7 +1,7 @@
 /*! jQuery UI - v1.12.1 - 2019-01-05
  * http://jqueryui.com
  * Includes: core.css, menu.css, selectmenu.css, button.css, theme.css
- * To view and modify this theme, visit http://jqueryui.com/themeroller/?scope=&folderName=custom-theme&bgImgOpacityError=&bgImgOpacityHighlight=&bgImgOpacityActive=&bgImgOpacityHover=&bgImgOpacityDefault=&bgImgOpacityContent=&bgImgOpacityHeader=&cornerRadiusShadow=8px&offsetLeftShadow=0px&offsetTopShadow=0px&thicknessShadow=5px&opacityShadow=30&bgImgOpacityShadow=0&bgTextureShadow=flat&bgColorShadow=%23666666&opacityOverlay=50&bgImgOpacityOverlay=0&bgTextureOverlay=flat&bgColorOverlay=%23fff&iconColorError=%23cc0000&fcError=%235f3f3f&borderColorError=%23f1a899&bgTextureError=flat&bgColorError=%23fddfdf&iconColorHighlight=%23777620&fcHighlight=%23777620&borderColorHighlight=%23dad55e&bgTextureHighlight=flat&bgColorHighlight=%23fffa90&iconColorActive=%23ffffff&fcActive=%23ffffff&borderColorActive=%23003eff&bgTextureActive=flat&bgColorActive=%23007fff&iconColorHover=%23666&fcHover=%23ffffff80&borderColorHover=%23ced4da&bgTextureHover=flat&bgColorHover=%23d32e1d&iconColorDefault=%23999&fcDefault=%23ffffff80&borderColorDefault=%23ced4da&bgTextureDefault=flat&bgColorDefault=%23d32e1d&iconColorContent=%23444444&fcContent=%23ffffff80&borderColorContent=%23ced4da&bgTextureContent=flat&bgColorContent=%23d32e1d&iconColorHeader=%23444444&fcHeader=%23333333&borderColorHeader=%23dddddd&bgTextureHeader=flat&bgColorHeader=%23f6f6f6&cornerRadius=5px&fwDefault=normal&fsDefault=1em&ffDefault=Futura%2C%20Arial%2CHelvetica%2Csans-serif
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?scope=&folderName=custom-theme&bgImgOpacityError=&bgImgOpacityHighlight=&bgImgOpacityActive=&bgImgOpacityHover=&bgImgOpacityDefault=&bgImgOpacityContent=&bgImgOpacityHeader=&cornerRadiusShadow=8px&offsetLeftShadow=0px&offsetTopShadow=0px&thicknessShadow=5px&opacityShadow=30&bgImgOpacityShadow=0&bgTextureShadow=flat&bgColorShadow=%23666666&opacityOverlay=50&bgImgOpacityOverlay=0&bgTextureOverlay=flat&bgColorOverlay=%23fff&iconColorError=%23cc0000&fcError=%235f3f3f&borderColorError=%23f1a899&bgTextureError=flat&bgColorError=%23fddfdf&iconColorHighlight=%23777620&fcHighlight=%23777620&borderColorHighlight=%23dad55e&bgTextureHighlight=flat&bgColorHighlight=%23fffa90&iconColorActive=%23ffffff&fcActive=%23ffffff&borderColorActive=%23007fff00&bgTextureActive=flat&bgColorActive=%23007fff&iconColorHover=%23ff6f72&fcHover=%23ffffff80&borderColorHover=%23ced4da&bgTextureHover=flat&bgColorHover=%23d32e1d&iconColorDefault=%23ff9797&fcDefault=%23ffffff80&borderColorDefault=%23ced4da&bgTextureDefault=flat&bgColorDefault=%23d32e1d&iconColorContent=%23444444&fcContent=%23ffffff80&borderColorContent=%23ced4da&bgTextureContent=flat&bgColorContent=%23d32e1d&iconColorHeader=%23444444&fcHeader=%23333333&borderColorHeader=%23dddddd&bgTextureHeader=flat&bgColorHeader=%23f6f6f6&cornerRadius=3.671875px&fwDefault=normal&fsDefault=1em&ffDefault=Futura%2C%20Arial%2CHelvetica%2Csans-serif
  * Copyright jQuery Foundation and other contributors; Licensed MIT */
 
 /* Layout helpers
@@ -185,7 +185,7 @@
     margin-top: 0;
 }
 .ui-button {
-    padding: .4em 1em;
+    padding: .46em 1em;
     display: inline-block;
     position: relative;
     line-height: normal;
@@ -348,7 +348,7 @@ a.ui-button:focus {
 }
 
 .ui-visual-focus {
-    box-shadow: 0 0 3px 1px rgb(94, 158, 214);
+    /*box-shadow: 0 0 3px 1px rgb(94, 158, 214);*/
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
@@ -356,15 +356,15 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-    border: 1px solid #003eff;
-    background: #007fff;
+    /*border: 1px solid #007fff00;*/
+    /*background: #007fff00;*/
     font-weight: normal;
     color: #ffffff;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
-    border: #003eff;
-    background-color: #ffffff;
+    /*border: #007fff00;*/
+    /*background-color: #ffffff;*/
 }
 .ui-state-active a,
 .ui-state-active a:link,
@@ -450,7 +450,7 @@ a.ui-button:active,
 .ui-state-focus .ui-icon,
 .ui-button:hover .ui-icon,
 .ui-button:focus .ui-icon {
-    background-image: url("images/ui-icons_666_256x240.png");
+    background-image: url("images/ui-icons_acafb3_256x240.png");
 }
 .ui-state-active .ui-icon,
 .ui-button:active .ui-icon {
@@ -465,7 +465,7 @@ a.ui-button:active,
     background-image: url("images/ui-icons_cc0000_256x240.png");
 }
 .ui-button .ui-icon {
-    background-image: url("images/ui-icons_999_256x240.png");
+    background-image: url("images/ui-icons_ced4da_256x240.png");
 }
 
 /* positioning */
@@ -655,25 +655,25 @@ a.ui-button:active,
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-    border-top-left-radius: 5px;
+    border-top-left-radius: 3.671875px;
 }
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-    border-top-right-radius: 5px;
+    border-top-right-radius: 3.671875px;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 3.671875px;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 3.671875px;
 }
 
 /* Overlays */
@@ -683,6 +683,6 @@ a.ui-button:active,
     filter: Alpha(Opacity=50); /* support: IE8 */
 }
 .ui-widget-shadow {
-    -webkit-box-shadow: 0px 0px 5px #666666;
-    box-shadow: 0px 0px 5px #666666;
+    /*-webkit-box-shadow: 0px 0px 5px #666666;*/
+    /*box-shadow: 0px 0px 5px #666666;*/
 }

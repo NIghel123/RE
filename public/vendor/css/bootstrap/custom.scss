@@ -8,6 +8,31 @@ $red:                    #d32e1d;
 $input-bg:               transparent;
 $input-placeholder-color:#ffffff80 !important;
 $input-color:            white;
+$table-striped-order:         even;
+
+//table: try it out:
+
+//$table-bg:                    #000;
+$table-accent-bg:             darken($red,10%);
+//
+//$table-hover-bg:              #000;
+//$table-active-bg:             #000;
+
+//$table-border-width:          $border-width  ;
+//$table-border-color:          $gray-300  ;
+//
+$table-head-bg:               darken($red,10%);
+$table-head-color:           #f8f9faff;
+//
+//$table-dark-bg:               $gray-900  ;
+//$table-dark-accent-bg:        rgba($white, .05)  ;
+//$table-dark-hover-bg:         rgba($white, .075)  ;
+//$table-dark-border-color:     lighten($gray-900, 7.5%)  ;
+//$table-dark-color:            $body-bg  ;
+
+//btn:try it out:
+
+
 
 //all of bootstrap:
 @import "../../../../node_modules/bootstrap/scss/bootstrap";
@@ -34,6 +59,32 @@ $input-color:            white;
 //        //        color:#fff;
 //    }
 //}
+
+//we would noe like to override the behaviour of the light button:
+//first we write a function that returns the actuel color value of "light":
+@function theme-color($key:"light"){ //the value behind the ":" is the default value of the argument if no value is
+    //specified!
+    @return map-get($theme-colors,$key);
+}
+// now get the value:
+$iivalue:theme-color();
+@debug $iivalue;
+//and prepare some other values for hover states of the button:
+$iihover-background : darken($red,10%);
+@debug $iihover-background;
+$iihover-border-color:lighten($red,15%);
+@debug $iihover-border-color;
+$iidefault-color:#934930;
+//$hover-color:$light-gray;/*lets see how the default behaves first*/
+//overwrite the button variant behaviour in the btn-light class
+.btn-light{
+    @inclue button-variant($iivalue /*background*/, $iivalue /*border*/, $iihover-background /*hover-background*/,$iihover-border-color /*hover-boder*/);
+    //we can also include custom text color properties with:
+    color:#{$iidefault-color};/*color when button is not hovered over*/
+    //&:hover{
+        //color:#/*when text gets hovered over*/
+    //}
+}
 
 //I think I can improve what I am doing here by wrting a new color and therefore a new button class that
 //will represent my desired button behaviour. ##TODO

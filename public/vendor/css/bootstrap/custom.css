@@ -1551,8 +1551,8 @@ pre code {
   border: 0;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #a62417;
 }
 
 .table-hover tbody tr:hover {
@@ -1691,8 +1691,8 @@ pre code {
   border-color: #32383e;
 }
 .table .thead-light th {
-  color: #495057;
-  background-color: #e9ecef;
+  color: #f8f9faff;
+  background-color: #a62417;
   border-color: #dee2e6;
 }
 
@@ -8611,6 +8611,12 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.btn-light {
+  @inclue button-variant($iivalue /*background*/, $iivalue /*border*/, $iihover-background /*hover-background*/,$iihover-border-color /*hover-boder*/);
+  color: #934930;
+  /*color when button is not hovered over*/
+}
+
 html {
   --button-hover-color: #a62417;
   --border-hover-color: #e86355;

@@ -1,12 +1,20 @@
+<!--#TODO color the textrare grabber maybe with a background arrow -->
 {{#section 'head'}}
 <link href="vendor/css/jquery-ui/jquery-ui.css" rel="stylesheet">
 <style>
+.overflow{
+    height:15em;
+}
 #selectmenu-button{
     width:100%;
 }
-#sidebar{
-    overflow: scroll;
-    color:white;
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }
     #upload-picture{
         color:#934930;
@@ -19,13 +27,6 @@
         border-color:var(--border-hover-color) !important;
         color:white;
     }
-    textarea::placeholder{
-    }
-    @media(min-width:576px){ /*screens that have at minimum this size*/
-        #sidebar{
-            width:var(--large-Sidebar,350px);
-        }
-    }
 </style>
 {{/section}}
 
@@ -33,14 +34,15 @@
 <img class="w-100" src="img/Bild.png">
 
 {{#section 'sidebar'}}
+{{#with language}}
 <div class="align-self-center col">
-    <h3 class="mx-auto text-center my-4">Mache deinen eignen<br>Roadtrip</h3>
+    <h3 class="mx-auto text-center my-4">{{{title}}}</h3>
     <form>
         <div class="form-group">
-            <label for="textarea">Beschreibe hier Deinen Traum-RoadTrip:</label>
-            <textarea class="form-control is-invalid p-0"
+            <label for="textarea">{{textarea-label}}</label>
+            <textarea class="form-control"
                       rows="11"
-                      id="textarea" placeholder="Erlebe das leben in all seinen Farben.Freiheit und Einheit sei auch mit dabei! Lorem ipsilum Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren. *Brigitte*................" required></textarea>
+                      id="textarea" placeholder="{{textarea-placeholder}}" required></textarea>
         </div>
         <div class="form-group">
             <div class="form-row">
@@ -53,46 +55,53 @@
                 <div class="col">
                     <input type="number" min="1" max="31" class="form-control" placeholder="Tag">
                 </div>
-                <div class="col">
+                <div class="col" id="dropdown">
                     <select class="" id="selectmenu">
-                        <option selected>Monat</option>
-                        <option>Januar</option>
-                        <option>Februar</option>
-                        <option>March</option>
-                        <option>April</option>
-                        <option>May</option>
-                        <option>Juni</option>
-                        <option>Juli</option>
-                        <option>August</option>
-                        <option>Semptember</option>
-                        <option>Novemver</option>
-                        <option>Dezember</option>
+                        <option disabled selected>{{date.month.placeholder}}</option>
+                        {{#each date.month.names}}
+                        <option value="{{@index}}">{{this}}</option>
+                        {{!##TODO write a helper that starts at 1 not a 0 like @index}}
+                        {{/each}}
                     </select>
                 </div>
                 <div class="col">
-                    <input type="number" min="1800" max="3000" class="form-control" placeholder="Jahr">
+                    <input type="number" min="{{../year.min}}" max="{{../year.max}}" class="form-control" placeholder="{{date.year.placeholder}}">
                 </div>
             </div>
-            <label class="mt-1" for="">Abfahrtsdatum</label>
+            <label class="mt-1" for="">{{date.label}}</label>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Reisedauer">
-            <small class="form-text">Beschreibe in einem kurzen Text wie lange du unterwegs sein willst</small>
+            <input type="text" class="form-control" placeholder="{{duration-of-trip.placeholder}}">
+            <small class="form-text">{{duration-of-trip.label}}</small>
         </div>
     </form>
 
     <div id="saveRoadtrip" class="border-top border-bottom row">
         <a href="#">
             <div class="col align-self-center">
-                <h3 class="mx-auto text-center my-5">Roadtrip Speichern</h3>
+                <h3 class="mx-auto text-center my-5">{{save-roadtrip}}</h3>
             </div>
         </a>
     </div>
 </div>
+{{/with}}
 {{/section}}
+
 {{#section 'jQuery'}}
 <script src="vendor/js/jquery-ui.js"></script>
 <script>
-    $( "#selectmenu" ).selectmenu({width:false});
+    /*make the text coloring consistent in the input elements*/
+    var selel =$( "#selectmenu" );
+    var defval = selel.selectmenu({width:false,
+        //makes the dropdown follow the scrolling motion of the inner block
+        appendTo:"#dropdown",
+        //changes the textcolor of the month-dropdown to white when another value then the defaul one is selected
+        change:function(){
+            var actval = selel.val();
+            if(actval !== defval)
+                $("#selectmenu-button").css("color","white");
+        }
+    }).selectmenu( "menuWidget" ).addClass( "overflow" ).val(); // in this line of code we get the defualt value of the select menu. Notice that selectmenu(..) returns $("#selectmenu").
+    //##TODO das untere ende des dropdown menus muesste immer 2em vom untern Bildschirmrand entfernt sein. Auch bei groeseren Bildschirmen als meinem!
 </script>
 {{/section}}

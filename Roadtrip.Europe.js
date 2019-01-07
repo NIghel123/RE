@@ -81,7 +81,15 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/createRoadtrip', function(req, res) {
-    res.render('createRoadtrip');
+    res.render('createRoadtrip', {
+        /*context of the page*/
+        language: getPage('createRoadtrip').content,
+        /*values that are language-independant*/
+        year: {
+            min: "1800",
+            max: "3000",
+        }
+    });
 });
 
 app.get('/viewRoadtrips', function(req, res) {
