@@ -8,31 +8,14 @@ $red:                    #d32e1d;
 $input-bg:               transparent;
 $input-placeholder-color:#ffffff80 !important;
 $input-color:            white;
-$table-striped-order:         even;
 
 //table: try it out:
 
-//$table-bg:                    #000;
 $table-accent-bg:             darken($red,10%);
-//
-//$table-hover-bg:              #000;
-//$table-active-bg:             #000;
-
-//$table-border-width:          $border-width  ;
-//$table-border-color:          $gray-300  ;
-//
 $table-head-bg:               darken($red,10%);
 $table-head-color:           #f8f9faff;
-//
-//$table-dark-bg:               $gray-900  ;
-//$table-dark-accent-bg:        rgba($white, .05)  ;
-//$table-dark-hover-bg:         rgba($white, .075)  ;
-//$table-dark-border-color:     lighten($gray-900, 7.5%)  ;
-//$table-dark-color:            $body-bg  ;
-
-//btn:try it out:
-
-
+$table-striped-order:         even;
+//$table-hover-bg:              rgba(#000, .1) !default; look for this later. For nicer behaviour oof ti
 
 //all of bootstrap:
 @import "../../../../node_modules/bootstrap/scss/bootstrap";
@@ -42,24 +25,6 @@ $table-head-color:           #f8f9faff;
 //@import "../../../../node_modules/bootstrap/scss/variables";
 //@import "../../../../node_modules/bootstrap/scss/mixins";
 
-//@import "../../../../public/css/createRoadtrip";
-//@function theme-color($key : "light") {
-//    @return map-get($theme-colors,$key);
-//}
-//$value : theme-color(); // returns the value of the default $key
-//.btn-light {
-//    //we now call the @mixin called button-variant with the specified arguments;
-//    @include button-variant($value, $value, #66001d, //target background-color;
-//    #66001d,//darken($value,10%), hover-border;
-//    darken($value,10%),
-//    darken($value,12.5%));
-//    color:#934930; //modify the text-color
-//
-//    &:hover{
-//        //        color:#fff;
-//    }
-//}
-
 //we would noe like to override the behaviour of the light button:
 //first we write a function that returns the actuel color value of "light":
 @function theme-color($key:"light"){ //the value behind the ":" is the default value of the argument if no value is
@@ -67,23 +32,16 @@ $table-head-color:           #f8f9faff;
     @return map-get($theme-colors,$key);
 }
 // now get the value:
-$iivalue:theme-color();
-@debug $iivalue;
+$value:theme-color();
 //and prepare some other values for hover states of the button:
-$iihover-background : darken($red,10%);
-@debug $iihover-background;
-$iihover-border-color:lighten($red,15%);
-@debug $iihover-border-color;
-$iidefault-color:#934930;
+$hover-background : darken($red,10%);
+$hover-border-color:lighten($red,15%);
+$default-color:#934930;
 //$hover-color:$light-gray;/*lets see how the default behaves first*/
 //overwrite the button variant behaviour in the btn-light class
 .btn-light{
-    @inclue button-variant($iivalue /*background*/, $iivalue /*border*/, $iihover-background /*hover-background*/,$iihover-border-color /*hover-boder*/);
-    //we can also include custom text color properties with:
-    color:#{$iidefault-color};/*color when button is not hovered over*/
-    //&:hover{
-        //color:#/*when text gets hovered over*/
-    //}
+    @include button-variant($value /*background*/, $value /*border*/, $hover-background /*hover-background*/,$hover-border-color /*hover-boder*/);
+    color:#{$default-color};/*color when button is not hovered over*/
 }
 
 //I think I can improve what I am doing here by wrting a new color and therefore a new button class that
