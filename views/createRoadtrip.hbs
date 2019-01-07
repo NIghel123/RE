@@ -16,17 +16,6 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-    #upload-picture{
-        color:#934930;
-    }
-    #saveRoadtrip,#upload-picture{
-        transition: background-color .15s ease-in-out, border-color .15s ease-in-out, color .15s ease-in-out;
-    }
-    #saveRoadtrip:hover,#upload-picture:hover{
-        background-color:var(--button-hover-color);
-        border-color:var(--border-hover-color) !important;
-        color:white;
-    }
 </style>
 {{/section}}
 
@@ -76,7 +65,7 @@ input[type="number"] {
         </div>
     </form>
 
-    <div id="saveRoadtrip" class="border-top border-bottom row">
+    <div id="saveRoadtrip" class="btn-hover-behaviour border-top border-bottom row">
         <a href="#">
             <div class="col align-self-center">
                 <h3 class="mx-auto text-center my-5">{{save-roadtrip}}</h3>

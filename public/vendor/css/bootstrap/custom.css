@@ -8640,6 +8640,60 @@ h3 {
   box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
 
+.btn-outline-light {
+  color: #f8f9faff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #f8f9faff;
+}
+.btn-outline-light:hover {
+  color: white;
+  background-color: #a62417;
+  border-color: #e86355;
+}
+.btn-outline-light:focus, .btn-outline-light.focus {
+  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+.btn-outline-light.disabled, .btn-outline-light:disabled {
+  color: #f8f9faff;
+  background-color: transparent;
+}
+.btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active, .show > .btn-outline-light.dropdown-toggle {
+  color: #fff;
+  background-color: #a62417;
+  border-color: #e86355;
+}
+.btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-light.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+
+.btn-hover-behaviour {
+  color: #fff;
+  background-color: transparent;
+  border-color: #f8f9faff;
+}
+.btn-hover-behaviour:hover {
+  color: #fff;
+  background-color: #a62417;
+  border-color: #e86355 !important;
+}
+.btn-hover-behaviour:focus, .btn-hover-behaviour.focus {
+  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+.btn-hover-behaviour.disabled, .btn-hover-behaviour:disabled {
+  color: #fff;
+  background-color: transparent;
+  border-color: #f8f9faff;
+}
+.btn-hover-behaviour:not(:disabled):not(.disabled):active, .btn-hover-behaviour:not(:disabled):not(.disabled).active, .show > .btn-hover-behaviour.dropdown-toggle {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #d3d9df;
+}
+.btn-hover-behaviour:not(:disabled):not(.disabled):active:focus, .btn-hover-behaviour:not(:disabled):not(.disabled).active:focus, .show > .btn-hover-behaviour.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+
 html {
   --button-hover-color: #a62417;
   --border-hover-color: #e86355;

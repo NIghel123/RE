@@ -3,16 +3,21 @@
 #sidebar{
     width:auto;
 }
-table{
-    width:350px !important;
+.table-container{
+    height:449px;
     margin-right:-34.5px;
     margin-left:-34.5px;
     overflow:auto;
+}
+h3{
+    line-height:1.5;
+    margin:2.25rem 0;
 }
 </style>
 {{/section}}
 
 {{! section body}}
+<img class="w-100" src="img/Bild.png">
 
 {{! /section}}
 
@@ -24,75 +29,85 @@ table{
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         </div>
         <div class="col-auto">
-            <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </div>
     </form>
-    <table class="table table-hover table-striped">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">Username</th>
-                <th scope="col">Start</th>
-                <th scope="col">Ende</th>
-                <th scope="col">Abfahrt</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Nighel123</th>
-                <td>Deutschland<br>Hamburg</td>
-                <td>Spanien<br>Madrid</td>
-                <td>2.10.2012</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-            <tr>
-                <th scope="row">Felix3</th>
-                <td>Italien<br>Rom</td>
-                <td>Griechenland<br>Athen</td>
-                <td>4.6.2019</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container border-top border-bottom">
+        <table class="table table-hover table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Start</th>
+                    <th scope="col">Ende</th>
+                    <th scope="col">Abfahrt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Nighel123</th>
+                    <td>Deutschland<br>Hamburg</td>
+                    <td>Spanien<br>Madrid</td>
+                    <td>2.10.2012</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+                <tr>
+                    <th scope="row">Felix3</th>
+                    <td>Italien<br>Rom</td>
+                    <td>Griechenland<br>Athen</td>
+                    <td>4.6.2019</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="saveRoadtrip" class="btn-hover-behaviour border-top border-bottom row">
+        <a href="#">
+            <div class="col align-self-center">
+                <h3 class="mx-auto text-center">+<br>Roadtrip Hinzufügen</h3>
+            </div>
+        </a>
+    </div>
 </div>
 {{/section}}
 

@@ -43,6 +43,13 @@ $default-color:#934930;
     @include button-variant($value /*background*/, $value /*border*/, $hover-background /*hover-background*/,$hover-border-color /*hover-boder*/);
     color:#{$default-color};/*color when button is not hovered over*/
 }
+.btn-outline-light{
+    //@include button-outline-variant($value/*color for text and border*/,/*hover-color for text and border*/,$hover-background/*hover-background*/,$hover-border-color);
+    @include button-outline-variant($color: $value,$color-hover:lighten($red,100%), $active-background: $hover-background, $active-border: $hover-border-color);
+}
+.btn-hover-behaviour{
+    @include button-variant(transparent /*background*/, $value /*border*/, $hover-background /*hover-background*/,$hover-border-color !important /*hover-boder*/);
+}
 
 //I think I can improve what I am doing here by wrting a new color and therefore a new button class that
 //will represent my desired button behaviour. ##TODO
