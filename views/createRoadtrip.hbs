@@ -8,6 +8,22 @@
 #selectmenu-button{
     width:100%;
 }
+/*##TODO include a class for this in custom.scss of bootstrap see where this is coming from!*/
+
+#selectmenu-button:focus,#textarea:focus{
+    border-color: #80bdff !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+#textarea:focus{
+    border:solid  #80bdff 1px !important;
+    width:calc(100% + 11px) !important;
+    margin: -1px 0 -1px -11px;
+}
+#textarea{
+    margin-left:-10px;
+    width:calc(100% + 10px) !important;
+}
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -29,7 +45,7 @@ input[type="number"] {
     <form>
         <div class="form-group">
             <label for="textarea">{{textarea-label}}</label>
-            <textarea class="form-control"
+            <textarea class="form-control border-0"
                       rows="11"
                       id="textarea" placeholder="{{textarea-placeholder}}" required></textarea>
         </div>
@@ -79,6 +95,8 @@ input[type="number"] {
 {{#section 'jQuery'}}
 <script src="vendor/js/jquery-ui.js"></script>
 <script>
+    var textarea = document.getElementById('textarea');
+    textarea.select();
     /*make the text coloring consistent in the input elements*/
     var selel =$( "#selectmenu" );
     var defval = selel.selectmenu({width:false,

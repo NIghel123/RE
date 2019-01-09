@@ -75,9 +75,7 @@ app.get(getPage('home').route, function(req, res) {
 });
 
 app.get('/login', function(req, res) {
-    res.render('login', {
-        fullscreen: true
-    });
+    res.render('login');
 });
 
 app.get('/createRoadtrip', function(req, res) {
@@ -94,6 +92,10 @@ app.get('/createRoadtrip', function(req, res) {
 
 app.get('/viewRoadtrips', function(req, res) {
     res.render('viewRoadtrips');
+});
+
+app.get('/viewRoadtrip', function(req, res) {
+    res.render('viewRoadtrip');
 });
 
 app.get('/whatSiteIsThis', function(req, res) {

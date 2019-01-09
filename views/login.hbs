@@ -1,35 +1,23 @@
-<!-- the following will be included into the head of the main.hbs file! -->
+<!--#TODO color the textrare grabber maybe with a background arrow -->
 {{#section 'head'}}
-    <style>
-        #box{
-border:solid 1px black;
-    width:30%;
-    margin:0 auto;
-    position:relative;
-    top:200px;
+<style>
+#grid-container{
+    justify-content: center !important;
 }
-img{
-    width:80%;
-    display:block;
-    margin:0 auto;
+#body-container{
+    flex-grow:0;
 }
-#inputWrap{
-    display:block;
-    margin:0 auto;
-    width:80%;
-}
-input{
-    width:100%;
-}
-
-    </style>
+</style>
 {{/section}}
 
-<!-- the following will replace the {{{body}}} tag inside the main.hbs file -->
-<div id='box'>
-    <img id='titleImg' src="img/IMG_9846.jpg">
-    <div id='inputWrap'>
-        <input type='text' required minlength="2" maxlength="30">
+{{#section 'sidebar'}}
+<form>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="iich biins">
     </div>
-    <img id='contiue' src='img/IMG_9846.jpg'>
-</div>
+</form>
+{{/section}}
+
+{{#section 'jQuery'}}
+<script></script>
+{{/section}}

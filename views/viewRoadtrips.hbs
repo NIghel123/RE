@@ -22,7 +22,7 @@ h3{
 {{! /section}}
 
 {{#section 'sidebar'}}
-<div class="col">
+<div class="col-auto">
     <h3 class="mx-auto text-center mt-4 mb-5">Welche Roadtrips<br>machen andere</h3>
     <form class="form-group form-row">
         <div class="col">
@@ -43,7 +43,7 @@ h3{
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="clickable-row" data-href='/viewRoadtrip'>
                     <th scope="row">Nighel123</th>
                     <td>Deutschland<br>Hamburg</td>
                     <td>Spanien<br>Madrid</td>
@@ -102,7 +102,7 @@ h3{
     </div>
 
     <div id="saveRoadtrip" class="btn-hover-behaviour border-top border-bottom row">
-        <a href="#">
+        <a href="/createRoadtrip">
             <div class="col align-self-center">
                 <h3 class="mx-auto text-center">+<br>Roadtrip Hinzufügen</h3>
             </div>
@@ -110,7 +110,12 @@ h3{
     </div>
 </div>
 {{/section}}
-
 {{#section 'jQuery'}}
-
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
 {{/section}}

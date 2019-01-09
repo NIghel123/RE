@@ -348,7 +348,7 @@ a.ui-button:focus {
 }
 
 .ui-visual-focus {
-    /*box-shadow: 0 0 3px 1px rgb(94, 158, 214);*/
+    box-shadow: 0 0 3px 1px rgb(94, 158, 214);
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
@@ -356,15 +356,15 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-    /*border: 1px solid #007fff00;*/
-    /*background: #007fff00;*/
+    border: 1px solid #007fff00;
+    background: #007fff00;
     font-weight: normal;
     color: #ffffff;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
-    /*border: #007fff00;*/
-    /*background-color: #ffffff;*/
+    border: #007fff00;
+    background-color: #ffffff;
 }
 .ui-state-active a,
 .ui-state-active a:link,
@@ -683,6 +683,6 @@ a.ui-button:active,
     filter: Alpha(Opacity=50); /* support: IE8 */
 }
 .ui-widget-shadow {
-    /*-webkit-box-shadow: 0px 0px 5px #666666;*/
-    /*box-shadow: 0px 0px 5px #666666;*/
+    -webkit-box-shadow: 0px 0px 5px #666666;
+    box-shadow: 0px 0px 5px #666666;
 }

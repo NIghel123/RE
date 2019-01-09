@@ -8668,8 +8668,9 @@ h3 {
 }
 
 .btn-hover-behaviour {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, margin-left 0.15s ease-in-out 0.03s;
   color: #fff;
-  background-color: transparent;
+  background-color: #d32e1d;
   border-color: #f8f9faff;
 }
 .btn-hover-behaviour:hover {
@@ -8682,12 +8683,12 @@ h3 {
 }
 .btn-hover-behaviour.disabled, .btn-hover-behaviour:disabled {
   color: #fff;
-  background-color: transparent;
+  background-color: #d32e1d;
   border-color: #f8f9faff;
 }
 .btn-hover-behaviour:not(:disabled):not(.disabled):active, .btn-hover-behaviour:not(:disabled):not(.disabled).active, .show > .btn-hover-behaviour.dropdown-toggle {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #a62417;
   border-color: #d3d9df;
 }
 .btn-hover-behaviour:not(:disabled):not(.disabled):active:focus, .btn-hover-behaviour:not(:disabled):not(.disabled).active:focus, .show > .btn-hover-behaviour.dropdown-toggle:focus {

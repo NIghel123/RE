@@ -7,8 +7,8 @@ html{
     --large-Sidebar:350px;
 }
 a,a:hover{
-    color: white;
     text-decoration:none;
     width:100%;
+    color:#f8f9faff;
 }
 
